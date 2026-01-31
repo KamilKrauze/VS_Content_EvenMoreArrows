@@ -1,8 +1,22 @@
 {
   "code": "basket_arrow",
-  "class" : "ArrowItem",
-  "projectile" : "basket_arrow-*",
+  "class" : "Item",
+  "tags": ["projectile"],
   "maxstacksize": 128,
+  "creativeinventory": {
+    "general": ["*"],
+    "even_more_arrows": ["*"],
+    "tools": ["*"],
+    "combatoverhaul": ["*"]
+  },
+  "textures": {
+    "metal": {
+      "base": "game:block/metal/plate/{metal_types}"
+    }
+  },
+  "shape": {
+    "base": "even_more_arrows:item/basket_arrow"
+  },
   "variantgroups": [
     {
       "code": "metal_types",
@@ -28,34 +42,61 @@
       ]
     }
   ],
-  "behaviours": [
-    { "name": "GroundStorable", 
-			"properties": {
-				"layout": "Stacking",
+  "behaviors": [
+    {
+      "name": "GroundStorable",
+      "properties": {
+        "layout": "Stacking",
 				"placeRemoveSound": "game:sounds/block/loosestick",
-				"stackingModel": "game:item/resource/cattailtops-pile",
-				"upSolid": false,
-				"modelItemsToStackSizeRatio": 1,
-				"stackingCapacity": 50,
-				"transferQuantity": 1,
-				"bulkTransferQuantity": 10,
-				"collisionBox": { "x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.12, "z2": 1 },
-				"cbScaleYByLayer": 0.12
-			}
-		}
-  ],
-  "creativeinventory": {
-    "general": ["*"],
-    "even_more_arrows": ["*"]
-  },
-  "textures": {
-    "metal": {
-      "base": "game:block/metal/plate/{metal_types}"
+				"stackingModel": "even_more_arrows:item/basket_arrow",
+        "modelItemsToStackSizeRatio": 8,
+        "stackingCapacity": 128,
+        "upSolid": false,
+        "transferQuantity": 8,
+        "bulkTransferQuantity": 32,
+        "collisionBox": {"x1": 0.2, "y1": 0, "z1": 0.2, "x2": 0.8, "y2": 0.0125, "z2": 0.8},
+        "cbScaleYByLayer": 0.1
+      }
+    },
+    {
+      "name": "CombatOverhaul:Projectile",
+      "properties": {
+        "stats": {
+          "AdditionalDurabilityCost": 0,
+          "CollisionRadius": 0.02,
+          "PenetrationDistance": 1,
+          "DamageStatsByType":
+          {
+            "*-bismuth":        {"DamageType": "PiercingAttack", "Damage": 1},
+            "*-bismuthbronze":  {"DamageType": "PiercingAttack", "Damage": 2},
+            "*-blackbronze":    {"DamageType": "PiercingAttack", "Damage": 2.5},
+            "*-brass":          {"DamageType": "PiercingAttack", "Damage": 1.75},
+            "*-chromium":       {"DamageType": "PiercingAttack", "Damage": 1.5},
+            "*-copper":         {"DamageType": "PiercingAttack", "Damage": 1},
+            "*-iron":           {"DamageType": "PiercingAttack", "Damage": 2.75},
+            "*-gold":           {"DamageType": "PiercingAttack", "Damage": 2.1},
+            "*-lead":           {"DamageType": "PiercingAttack", "Damage": 2.9},
+            "*-meteoriciron":   {"DamageType": "PiercingAttack", "Damage": 3},
+            "*-nickel":         {"DamageType": "PiercingAttack", "Damage": 1.15},
+            "*-platinum":       {"DamageType": "PiercingAttack", "Damage": 3},
+            "*-silver":         {"DamageType": "PiercingAttack", "Damage": 2},
+            "*-steel":          {"DamageType": "PiercingAttack", "Damage": 4},
+            "*-tin":            {"DamageType": "PiercingAttack", "Damage": 0.95},
+            "*-tinbronze":      {"DamageType": "PiercingAttack", "Damage": 2},
+            "*-titanium":       {"DamageType": "PiercingAttack", "Damage": 3.5},
+            "*-zinc":           {"DamageType": "PiercingAttack", "Damage": 1.15}
+          },
+            
+          "Knockback": 0.15,
+          "EntityCode": "even_more_arrows:basket_arrow-{metal_types}",
+          "HitSound": "game:sounds/player/projectilehit",
+          "DurabilityDamage": 0,
+          "DropChance": 0
+        }
+      }
     }
-  },
-  "shape": {
-    "base": "item/basket_arrow"
-  },
+  ],
+
   "guiTransform": {
     "translation": {
       "x": 0,
@@ -76,12 +117,12 @@
   },
   "fpHandTransform": {
     "translation": {
-      "x": -0.3,
+      "x": -2,
       "y": -0.5,
       "z": 0.3
     },
     "rotation": {
-      "x": -29,
+      "x": 61,
       "y": 1,
       "z": 88
     },
@@ -118,7 +159,7 @@
     },
     "rotation": {
       "x": 0,
-      "y": -90,
+      "y": 0,
       "z": 0
     },
     "origin": {
@@ -129,29 +170,6 @@
     "scale": 0.8
   },
   "attributes": {
-    "isProjectile": true,
-    "arrow": true,
-
-    "damageByType": {
-      "*-bismuth": 1,
-      "*-bismuthbronze": 1,
-      "*-blackbronze": 1.5,
-      "*-brass": 1,
-      "*-chromium": 1,
-      "*-copper": 1,
-      "*-iron": 2,
-      "*-gold": 1,
-      "*-lead": 1,
-      "*-meteoriciron": 2.25,
-      "*-nickel": 1,
-      "*-platinum": 1,
-      "*-silver": 1,
-      "*-steel": 2.5,
-      "*-tin": 1.25,
-      "*-tinbronze": 1,
-      "*-titanium": 2.75,
-      "*-zinc": 0.75
-    },
     "breakChanceOnImpactByType": {
       "*-bismuth": 0.15,
       "*-bismuthbronze": 0.125,

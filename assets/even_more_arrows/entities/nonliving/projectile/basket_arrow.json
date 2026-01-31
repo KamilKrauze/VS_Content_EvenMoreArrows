@@ -1,7 +1,7 @@
 {
   "code": "basket_arrow",
-  "class": "EntityProjectile",
-  "tags": ["inanimate", "projectile", "arrow"],
+  "class": "CombatOverhaul:Projectile",
+  "tags": ["projectile", "inanimate"],
   "variantgroups": [
     {
       "code": "metal_types",
@@ -35,36 +35,22 @@
     "size": 0.75,
     "renderer": "Shape",
     "shapeByType": { 
-      "*" : { "base": "entity/basket_arrow" },
+      "*" : { "base": "even_more_arrows:entity/basket_arrow" }
     },
-    "texturesByType": {
-      "*": {} 
+    "textures": {
+      "metal": {
+        "base": "game:block/metal/plate/{metal_types}"
+      }
     },
     "behaviors": [
-      {
-        "code": "passivephysics",
-        "groundDragFactor": 1,
-        "airDragFactor": 0.25,
-        "gravityFactor": 0.75
-      },
-      { "code": "interpolateposition" }
+      {"code": "CombatOverhaul:ProjectilePhysics", "groundDragFactor": 1, "airDragFactor": 1, "gravityFactor": 1}, 
+      {"code": "interpolateposition"}
     ]
   },
   "server": {
     "behaviors": [
-      {
-        "code": "projectile",
-        "damage": 3,
-        "knockbackStrength": 0.2
-      },
-      {
-        "code": "passivephysics",
-        "groundDragFactor": 1,
-        "airDragFactor": 0.25,
-        "gravityFactor": 0.75
-      },
-      { "code": "despawn", "minSeconds": 600 },
-      { "code": "entitystatetags" }
+      {"code": "CombatOverhaul:ProjectilePhysics", "groundDragFactor": 1, "airDragFactor": 1, "gravityFactor": 1}, 
+      {"code": "despawn", "minSeconds": 600}
     ]
   },
   "sounds": {}
