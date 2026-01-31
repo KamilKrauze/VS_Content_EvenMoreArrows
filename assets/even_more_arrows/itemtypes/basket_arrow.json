@@ -64,7 +64,7 @@
         "stats": {
           "AdditionalDurabilityCost": 0,
           "CollisionRadius": 0.02,
-          "PenetrationDistance": 1,
+          "PenetrationDistance": 0.5,
           "DamageStatsByType":
           {
             "*-bismuth":        {"DamageType": "PiercingAttack", "Damage": 1},

@@ -1,0 +1,57 @@
+{
+  "code": "whistling_arrow",
+  "class": "CombatOverhaul:Projectile",
+  "tags": ["projectile", "inanimate"],
+  "variantgroups": [
+    {
+      "code": "metal_types",
+      "states": [
+        "bismuth",
+        "bismuthbronze",
+        "blackbronze",
+        "brass",
+        "chromium",
+        "copper",
+        "iron",
+        "gold",
+        "lead",
+        "meteoriciron",
+        "nickel",
+        "platinum",
+        "silver",
+        "steel",
+        "tin",
+        "tinbronze",
+        "titanium",
+        "zinc"
+      ]
+    }
+  ],
+  "attributes": {
+    "isProjectile": true
+  },
+  "hitboxSize": { "x": 0.1, "y": 0.1 },
+  "client": {
+    "size": 0.75,
+    "renderer": "Shape",
+    "shapeByType": { 
+      "*" : { "base": "even_more_arrows:entity/whistling_arrow" }
+    },
+    "textures": {
+      "metal": {
+        "base": "game:block/metal/plate/{metal_types}"
+      }
+    },
+    "behaviors": [
+      {"code": "CombatOverhaul:ProjectilePhysics", "groundDragFactor": 1, "airDragFactor": 1, "gravityFactor": 1}, 
+      {"code": "interpolateposition"}
+    ]
+  },
+  "server": {
+    "behaviors": [
+      {"code": "CombatOverhaul:ProjectilePhysics", "groundDragFactor": 1, "airDragFactor": 1, "gravityFactor": 1}, 
+      {"code": "despawn", "minSeconds": 600}
+    ]
+  },
+  "sounds": {}
+}

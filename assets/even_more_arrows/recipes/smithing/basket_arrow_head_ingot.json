@@ -1,0 +1,46 @@
+{
+  "ingredient": {
+    "type": "item",
+    "code": "game:ingot-*",
+    "name": "ingotmetal",
+    "allowedVariants": [
+      "bismuth",
+      "bismuthbronze",
+      "blackbronze",
+      "brass",
+      "chromium",
+      "copper",
+      "iron",
+      "gold",
+      "lead",
+      "meteoriciron",
+      "nickel",
+      "platinum",
+      "silver",
+      "steel",
+      "tin",
+      "tinbronze",
+      "titanium",
+      "zinc"
+    ]
+  },
+
+  "name": "4 Basket Arrow Heads",
+  "output": {
+    "type": "item",
+    "code": "even_more_arrows:basket_head-{ingotmetal}",
+    "stacksize": 4
+  },
+
+  "pattern": [
+    [
+      "_#__#__",
+      "_#_#_#_",
+      "#_#_#__",
+      "_##_##_",
+      "_#_##_#",
+      "__#__#_",
+      "__#__#_"
+    ]
+  ]
+}

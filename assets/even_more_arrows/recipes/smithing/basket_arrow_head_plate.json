@@ -1,0 +1,48 @@
+{
+  "ingredient": {
+    "type": "item",
+    "code": "game:ingot-*",
+    "name": "platemetal",
+    "allowedVariants": [
+      "bismuth",
+      "bismuthbronze",
+      "blackbronze",
+      "brass",
+      "chromium",
+      "copper",
+      "iron",
+      "gold",
+      "lead",
+      "meteoriciron",
+      "nickel",
+      "platinum",
+      "silver",
+      "steel",
+      "tin",
+      "tinbronze",
+      "titanium",
+      "zinc"
+    ]
+  },
+
+  "name": "8 Basket Arrow Heads",
+  "output": {
+    "type": "item",
+    "code": "even_more_arrows:basket_head-{platemetal}",
+    "stacksize": 8
+  },
+
+  "pattern": [
+    [
+      "_#_#_#_#_",
+      "_##_###_#",
+      "#_###_##_",
+      "_#_#_###_",
+      "_________",
+      "_#_#_#_#_",
+      "_##_###_#",
+      "#_###_##_",
+      "_#_#_###_"
+    ]
+  ]
+}
