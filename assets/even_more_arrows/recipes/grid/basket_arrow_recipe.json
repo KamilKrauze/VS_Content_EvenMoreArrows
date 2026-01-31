@@ -1,0 +1,26 @@
+{
+	"ingredientPattern": "T,S,F",
+	"width": 1,
+	"height": 3,
+
+    "ingredients": {
+		"T": {
+			"type": "item",
+			"code": "even_more_arrows:basket_head-*",
+			"name": "metal"
+		},
+		"S": {
+			"type": "item",
+			"code": "game:stick"
+		},
+        "F": {
+			"type": "item",
+			"code": "game:feather"
+		}
+	},
+
+    "output": {
+		"type": "item",
+		"code": "even_more_arrows:basket_arrow-{metal}"
+	}
+}

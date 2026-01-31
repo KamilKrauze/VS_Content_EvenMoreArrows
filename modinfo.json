@@ -1,0 +1,10 @@
+{
+  "type": "content",
+  "modid": "even_more_arrows",
+  "name": "Even More Arrows",
+  "authors": [
+    "Soul7734"
+  ],
+  "description": "Adds more arrow types from history",
+  "version": "0.0.7"
+}
