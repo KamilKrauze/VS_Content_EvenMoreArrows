@@ -31,6 +31,11 @@
     "isProjectile": true
   },
   "hitboxSize": { "x": 0.1, "y": 0.1 },
+  
+  "behaviours": [
+      {"code": "pex:Sounds", "flying_sound" : "game:sounds/voice/ocarina/7.ogg"}
+  ],
+
   "client": {
     "size": 0.75,
     "renderer": "Shape",
@@ -52,6 +57,5 @@
       {"code": "CombatOverhaul:ProjectilePhysics", "groundDragFactor": 1, "airDragFactor": 1, "gravityFactor": 1}, 
       {"code": "despawn", "minSeconds": 600}
     ]
-  },
-  "sounds": {}
+  }
 }
